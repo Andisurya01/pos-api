@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+
+# build
+/dist
+*.tsbuildinfo
+
+# testing
+/coverage
+
+# env files (secrets stay on the server; commit only .env.example)
+.env*
+!.env.example
+
+# logs
+logs
+*.log
+pnpm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# uploaded files (attachments) in local dev
+/storage
