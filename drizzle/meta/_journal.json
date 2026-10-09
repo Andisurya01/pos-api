@@ -71,6 +71,20 @@
       "when": 1791515593418,
       "tag": "0009_shifts",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1791523756091,
+      "tag": "0010_sales",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1791524152722,
+      "tag": "0011_cash_documents",
+      "breakpoints": true
     }
   ]
 }

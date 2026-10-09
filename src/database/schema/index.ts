@@ -4,3 +4,4 @@ export * from './finance.js';
 export * from './stock.js';
 export * from './purchasing.js';
 export * from './sales.js';
+export * from './cash.js';

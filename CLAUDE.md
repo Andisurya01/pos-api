@@ -33,12 +33,12 @@ src/
 ├── users/                   ← kelola pengguna, PIN pribadi
 ├── catalog/                 ← kategori/merek/satuan, produk-SKU-satuan-barcode-harga, bundel, promo, lookup kasir
 ├── partners/                ← supplier dan member (normalisasi nomor HP)
-├── finance/                 ← bagan akun + pemetaan, periode, JournalService (posting/balik), DocumentNumberService
+├── finance/                 ← bagan akun + pemetaan, JournalService (posting/balik), DocumentNumberService, kas (KK/KM/MK), jurnal manual, settlement QRIS, tutup periode/tahun
 ├── purchasing/              ← PO, penerimaan (+langsung), tagihan, pembayaran hutang, retur pembelian
-├── sales/                   ← laci kasir, metode bayar, shift (transaksi penjualan menyusul)
+├── sales/                   ← laci kasir, metode bayar, shift, cart-calculator (harga/promo/PPN/pembulatan), penjualan, void, retur, transaksi ditahan
 ├── stock/                   ← StockService (ledger + saldo + HPP rata-rata), penyesuaian & saldo awal stok, pemindahan, stock opname, kartu stok
 └── health/                  ← GET /api/v1/health
-drizzle/                     ← migrasi SQL (0000–0009), ikut di-commit
+drizzle/                     ← migrasi SQL (0000–0011), ikut di-commit
 test/                        ← e2e per modul; helpers/db.ts mengosongkan pos_test sebelum tiap file
 ```
 
