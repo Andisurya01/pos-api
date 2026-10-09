@@ -5,7 +5,7 @@ import { hasPermission, type Principal } from '../access/principal.js';
 import { AuditService } from '../audit/audit.service.js';
 import { businessDate } from '../common/business-date.js';
 import { DB, type Database, type DbExecutor, type DbTransaction } from '../database/database.module.js';
-import { journalLines, shiftCashMovements, shifts, terminals } from '../database/schema/index.js';
+import { heldSales, journalLines, shiftCashMovements, shifts, terminals } from '../database/schema/index.js';
 import { DocumentNumberService } from '../finance/document-number.service.js';
 import { type JournalLineInput, JournalService } from '../finance/journal.service.js';
 
@@ -135,6 +135,8 @@ export class ShiftsService {
           description: `Tutup shift ${terminal.code}`, lines,
         })).id;
       }
+      // Held carts are discarded when the shift ends (docs/alur/04 §2).
+      await tx.delete(heldSales).where(eq(heldSales.shiftId, shiftId));
       await tx
         .update(shifts)
         .set({
